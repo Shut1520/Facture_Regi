@@ -41,4 +41,10 @@ contextBridge.exposeInMainWorld('electronAPI', {
     delete: (id) => ipcRenderer.invoke('invoiceItem:delete', id),
     recalculateTotals: (invoiceId) => ipcRenderer.invoke('invoiceItem:recalculateTotals', invoiceId),
   },
+
+  // ─── EXPORT ────────────────────────────────────────────
+  export: {
+    pdf: (invoiceId) => ipcRenderer.invoke('export:pdf', invoiceId),
+    excel: (invoiceId) => ipcRenderer.invoke('export:excel', invoiceId),
+  },
 })

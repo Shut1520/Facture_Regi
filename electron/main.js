@@ -1,12 +1,14 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('node:path')
 const {
+  db,
   initDatabase,
   companyQueries,
   clientQueries,
   invoiceQueries,
   invoiceItemQueries,
 } = require('./database')
+const { exportPdf, exportExcel } = require('./exportHandler')
 
 const isDev = !!process.env.VITE_DEV_SERVER_URL
 
@@ -83,6 +85,10 @@ function registerIpcHandlers() {
   ipcMain.handle('invoiceItem:recalculateTotals', (_, invoiceId) =>
     invoiceItemQueries.recalculateTotals(invoiceId)
   )
+
+  // ─── EXPORT ─────────────────────────────────────────────
+  ipcMain.handle('export:pdf', (_, invoiceId) => exportPdf(mainWindow, invoiceId, db))
+  ipcMain.handle('export:excel', (_, invoiceId) => exportExcel(mainWindow, invoiceId, db))
 }
 
 app.whenReady().then(() => {

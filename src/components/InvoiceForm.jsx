@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { clients, invoices, invoiceItems } from '../services/api'
@@ -8,7 +8,7 @@ import {
   calculateInvoiceTotals,
   formatCurrency,
 } from '../services/api'
-import { invoiceSchema, invoiceItemSchema } from '../utils/schemas'
+import { invoiceSchema } from '../utils/schemas'
 
 export default function InvoiceForm({ onBack, onPreview, editingInvoiceId }) {
   const [clientList, setClientList] = useState([])

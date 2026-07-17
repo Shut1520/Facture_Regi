@@ -41,25 +41,26 @@
 - [x] App.jsx avec navigation (Factures / Clients)
 - [x] Schémas Zod dans src/utils/schemas.js
 
-## Phase 4 : Aperçu et template
+## Phase 4 : Apercu et template
 
-- [ ] Composant `InvoicePreview.jsx` — aperçu WYSIWYG
-- [ ] En-tête document (logo, entreprise, direction, date, numéro)
-- [ ] Section client (nom, adresse, quartier, référence, téléphone)
-- [ ] Tableau de données (camion citerne, courses, quantité, désignation, prix)
-- [ ] Zone texte libre et mentions spécifiques
-- [ ] Totaux (HT, TVA, TTC)
-- [ ] Zones de signature
-- [ ] CSS pixel-perfect sur template REGIDESO
+- [x] Composant `InvoicePreview.jsx` — apercu WYSIWYG style A4
+- [x] En-tete document (logo REGIDESO, entreprise, direction, date, numero)
+- [x] Section client (nom, adresse, quartier, reference, telephone)
+- [x] Tableau de donnees (camion citerne, courses, quantite, designation, prix)
+- [x] Zone texte libre et mentions specifiques
+- [x] Totaux (HT, TVA, TTC)
+- [x] Zones de signature (Chef Section + Chef Division)
+- [x] Connecte via App.jsx (bouton Voir depuis InvoiceList)
+- [x] getInvoiceFull charge les donnees client completes
 
 ## Phase 5 : Export PDF/Excel
 
-- [ ] Export PDF via `printToPDF()` natif Electron
-- [ ] Rendu 300 DPI, métadonnées, pixel-perfect
-- [ ] Export Excel via `exceljs` (formules, styling conditionnel)
-- [ ] Composant `ExportModal.jsx` — choix format + dossier destination
-- [ ] Nommage automatique (ex: FACTURE_2026_078.pdf)
-- [ ] Aperçu avant export
+- [x] Export PDF via `printToPDF()` natif Electron
+- [x] Rendu 300 DPI, métadonnées, pixel-perfect
+- [x] Export Excel via `exceljs` (formules, styling conditionnel)
+- [x] Composant `ExportModal.jsx` — choix format + dossier destination
+- [x] Nommage automatique (ex: FACTURE_2026_078.pdf)
+- [x] Apercu avant export
 - [ ] Historique des exports
 
 ## Phase 6 : Tests et optimisations

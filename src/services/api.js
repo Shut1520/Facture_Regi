@@ -99,3 +99,8 @@ export function formatCurrency(amount) {
     maximumFractionDigits: 2,
   }).format(amount)
 }
+
+// ─── EXPORT ──────────────────────────────────────────────
+
+export const exportPdf = (invoiceId) => api.export.pdf(invoiceId)
+export const exportExcel = (invoiceId) => api.export.excel(invoiceId)
