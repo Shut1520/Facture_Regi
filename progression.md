@@ -30,14 +30,16 @@
 
 ## Phase 3 : Interface de saisie
 
-- [ ] Composant `InvoiceForm.jsx` — formulaire multi-étapes
-- [ ] Composant `ClientManager.jsx` — CRUD clients dans l'UI
-- [ ] Composant `InvoiceList.jsx` — liste + recherche de factures
-- [ ] Validation en temps réel (Zod + React Hook Form)
-- [ ] Calcul automatique : quantité × prix unitaire = total ligne
-- [ ] Calcul TVA (HT × taux) et Total TTC
-- [ ] Formatage monétaire (séparateur de milliers, 2 décimales)
-- [ ] Navigation clavier (Tab, Entrée)
+- [x] Composant `InvoiceForm.jsx` — formulaire avec en-tête, client, lignes, totaux
+- [x] Composant `ClientManager.jsx` — CRUD clients dans l'UI (formulaire + tableau)
+- [x] Composant `InvoiceList.jsx` — liste + recherche + dupliquer/supprimer
+- [x] Validation en temps réel (Zod v4 + React Hook Form + @hookform/resolvers)
+- [x] Calcul automatique : quantité × prix unitaire = total ligne
+- [x] Calcul TVA (HT × taux) et Total TTC
+- [x] Formatage monétaire (Intl.NumberFormat fr-CD, 2 décimales)
+- [x] Navigation clavier (Tab entre champs)
+- [x] App.jsx avec navigation (Factures / Clients)
+- [x] Schémas Zod dans src/utils/schemas.js
 
 ## Phase 4 : Aperçu et template
 

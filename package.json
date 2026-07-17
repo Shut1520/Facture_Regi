@@ -4,13 +4,15 @@
   "version": "0.0.0",
   "main": "electron/main.js",
   "scripts": {
-    "dev": "concurrently \"vite\" \"cross-env VITE_DEV_SERVER_URL=http://localhost:5173 electron .\"",
+    "dev": "concurrently -k \"vite\" \"wait-on http://localhost:5173 && cross-env VITE_DEV_SERVER_URL=http://localhost:5173 electron .\"",
+    "postinstall": "electron-rebuild --force",
     "build": "vite build",
     "start": "electron .",
     "dist": "vite build && electron-builder",
     "lint": "oxlint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.4.0",
     "better-sqlite3": "^12.11.1",
     "concurrently": "^10.0.3",
     "cross-env": "^7.0.3",
@@ -30,7 +32,8 @@
     "electron-builder": "^26.15.3",
     "oxlint": "^1.71.0",
     "tailwindcss": "^4.3.3",
-    "vite": "^8.1.1"
+    "vite": "^8.1.1",
+    "wait-on": "^9.0.10"
   },
   "build": {
     "appId": "com.facture.desktop",
